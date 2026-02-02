@@ -10,20 +10,26 @@ This is a website project for looking up exam scores using registration numbers,
 - SQLite
 - HTML, CSS
 # Installation
-1. ```bash
+1. Clone folder from github
+```bash
 git clone https://github.com/ThanTitan472/G-Scores-python-webite.git
-2. ```bash
+```
+2. Go to the mysite folder.
+```bash
 cd mysite
-3. ```bash
+```
+3. Install Django libraries
+```bash
 pip install django
-4. ``` bash
+```
+4. Run app
+```bash
 python manage.py seeder
-5. ``` bash
 python manage.py makemigrations
-6. ``` bash
 python manage.py migrate
-7. ``` bash
 python manage.py runserver
+```
+
 # Features
 - Look up exam scores using your registration number.
 
@@ -32,4 +38,5 @@ python manage.py runserver
 - Statistics of the top 10 students with the highest exam scores in Group A (Mathematics, Physics, Chemistry).
 # Author
 Name: Võ Phi Thân
+
 Email: vothan472@gmail.com
