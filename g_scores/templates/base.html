@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>G-Scores</title>
+        <link rel="stylesheet" href="{%static 'g_scores\css\style.css'%}">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>G-Scores</h1>
+        </header>
+        
+        <div class="container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <h3>Menu</h3>
+                <ul>
+                    <li><a href="/dashboard"class="{% if '/dashboard' in request.path %}active{% endif %}">Dashboard</a></li>
+                    <li><a href="/searchscores" class="{% if '/searchscores' in request.path %}active{% endif %}">Search Scores</a></li>
+                    <li><a href="/reports" class="{% if '/reports' in request.path %}active{% endif %}">Reports</a></li>
+                    <li><a href="/settings" class="{% if '/settings' in request.path %}active{% endif %}">Settings</a></li>
+                </ul>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="main-content">
+                {% block content %}  {% endblock %}
+            </div>
+        </div>
+
+    </body>
+
+</html>

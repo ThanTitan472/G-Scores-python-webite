@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<div class="card">
+    <h2>User Registration</h2>
+    <label>Registration Number:</label>
+    <form action="{%url 'search-scores'%}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+        <input type="text" name="sbd" maxlength="8" placeholder="Enter registration number">
+        <button  type="submit">Submit</button>
+    </div>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Detailed Scores</h2>
+    {% if not sbd_check %}
+        <p>Detailed view of search scores here!</p>
+    {% endif %}
+    {% if scores %}
+        <table class="student-table">
+            <tr>
+                {% for label in name_list %}
+                    <th>{{label}}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for values in scores.values %}
+                    <th>{{values|default:"-"}}</th>
+                {% endfor %}
+            </tr>
+        </table>
+    {% elif  sbd_check %}
+        <p>No results found.</p>
+    {% endif %}
+</div>
+{% endblock %}

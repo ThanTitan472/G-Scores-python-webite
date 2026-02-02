@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<h3>Top 10 students of group A including (math, physics, chemistry)</h3>
+<table class="student-table">
+    <tr>
+        {% for label in name_list %}
+            <th>{{label}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in top_students %}
+    <tr>
+        <th>{{row.0}}</th>
+        <th>{{row.1|default:"-"}}</th>
+        <th>{{row.2|default:"-"}}</th>
+        <th>{{row.3|default:"-"}}</th>
+        <th>{{row.4|floatformat:2}}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
